@@ -1,0 +1,7 @@
+{
+  "name": "stockcontroller",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

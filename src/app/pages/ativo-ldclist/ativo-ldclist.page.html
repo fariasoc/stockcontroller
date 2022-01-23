@@ -1,0 +1,160 @@
+<ion-header>
+
+  <ion-toolbar color="primary">  
+
+    <ion-title > <img src="../../../assets/LDC.png" style="height: 25px; width: 40px; " > <b>  Stock Controller </b>
+      
+    </ion-title>  
+    
+  </ion-toolbar>
+
+</ion-header>
+ 
+<ion-content>
+
+  
+    <ion-fab-button routerLink="/home" ><ion-icon name="file"></ion-icon></ion-fab-button>
+
+
+<!-- fab placed in the center of the content with a list on each side -->
+<ion-fab vertical="center" horizontal="end" slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="book-outline"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button routerLink="/ativo" ><ion-icon name="add"></ion-icon></ion-fab-button>
+  </ion-fab-list>
+  <ion-fab-list side="bottom">
+    <ion-fab-button routerLink="/sobre" ><ion-icon name="pulse-outline"></ion-icon></ion-fab-button>
+  </ion-fab-list>
+  <ion-fab-list side="start">
+    <ion-fab-button routerLink="/reuniao" ><ion-icon name="create-outline"></ion-icon></ion-fab-button>
+  </ion-fab-list>
+
+</ion-fab>
+
+
+
+  <ion-note style="font-size: 8px; color: black; margin-left: 3%;" > Powered by Celso Farias</ion-note>
+
+  <ion-list >
+
+
+    <ion-toolbar>
+      <ion-title style="color: black;"> <ion-icon name="pricetags-outline">  </ion-icon> <b> Equipamentos  <br>  </b> </ion-title>
+    </ion-toolbar>
+    
+
+    <!-- Multi-line sliding item with icon options on both sides -->
+    <ion-item-sliding id="item100" button [routerLink]="['/ativo', ativo.id]" *ngFor="let ativo of (ativos | async)"  class="ativoLDC">
+      <ion-item href="#" >
+        <ion-label >
+          <h2> {{ ativo.nome }} </h2>
+          <p> {{ ativo.lacre_num}}</p>
+          <p>{{ ativo.setor}}</p>
+        </ion-label>
+        <ion-note slot="end"> 
+        <b> {{ativo.status}}</b>
+        </ion-note>
+      </ion-item>
+  
+      <ion-item-options side="start">
+        <ion-item-option>
+          <ion-icon slot="icon-only" name="person"></ion-icon> Movimentação
+        </ion-item-option>
+      </ion-item-options>
+  
+      <ion-item-options side="end">
+        <ion-item-option color="success" >
+          <ion-icon slot="icon-only" name="lock-open-outline"  ></ion-icon> Abrir
+        </ion-item-option>
+        <ion-item-option color="medium">
+          <ion-icon slot="icon-only" name="lock-closed-outline"></ion-icon> Fechar
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+
+  </ion-list> 
+
+
+  <ion-toolbar>
+    <ion-title style="color: black;" > <ion-icon name="business-outline"></ion-icon> <b> Setores  <br>  </b> </ion-title>
+  </ion-toolbar>
+
+   <div *ngFor="let cat of items" class="category-block">
+ 
+    <ion-row no-padding class="category-banner" style="color: black;">
+      <ion-col text-left button tappable (click)="cat.expanded = !cat.expanded" align-self-center >
+        {{ cat.category }}
+      </ion-col>
+    </ion-row>
+ 
+    <ion-slides [options]="sliderConfig">
+      <ion-slide *ngFor="let product of cat.products">
+        <div *ngIf="cat.expanded">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title style="font-size: 10px;" >
+                {{ product.name }}  <p style="font-size: 9px; font-style: italic;"> - {{product.tag}} </p>
+              </ion-card-title>
+              <ion-card-content>
+                <img src="https://via.placeholder.com/300x300">
+                <ion-button expand="full" > <ion-icon name="eye-outline"></ion-icon> </ion-button>
+              </ion-card-content>
+            </ion-card-header>
+          </ion-card>
+        </div>
+      </ion-slide>
+    </ion-slides>
+ 
+  </div>
+
+
+  <ion-toolbar>
+    <ion-title style="color: black;">     <ion-icon name="color-filter-outline"></ion-icon>
+      <b> Reunião diária  <br>  </b> </ion-title>
+  </ion-toolbar>
+
+   <!-- 
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/ativo">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button routerLink="/reuniao">
+      <ion-icon name="clipboard-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+ 
+
+
+    
+
+      <ion-list>
+    <ion-item button [routerLink]="['/ativo', ativo.id]" *ngFor="let ativo of (ativos | async)">
+      {{ ativo.nome }} <br> <br> <p style="font-size: 9px;">
+      {{ ativo.lacre_num}} => {{ativo.status}} </p>
+    </ion-item>
+  </ion-list>
+
+
+
+  -->
+
+  <!-- 
+    <ion-list>
+      <ion-label button [routerLink]="['/ativo', ativo.id]" *ngFor="let ativo of (ativos | async)">
+        {{ ativo.nome }} <br> <p style="font-size: 9px;">
+        {{ ativo.lacre_num}} => {{ativo.status}} </p>
+      </ion-label>
+    </ion-list>
+  -->
+
+
+
+</ion-content>

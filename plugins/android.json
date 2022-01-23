@@ -1,0 +1,68 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com.paypal.cordova.mobilesdk": {
+      "PACKAGE_NAME": "stock.controller"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "stock.controller"
+    },
+    "cordova-plugin-camera": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "stock.controller"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "stock.controller"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "stock.controller"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "stock.controller"
+    },
+    "cordova-plugin-ionic-webview": {
+      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
+      "PACKAGE_NAME": "stock.controller"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "stock.controller"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "stock.controller"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "stock.controller"
+    },
+    "cordova.plugins.diagnostic": {
+      "ANDROID_SUPPORT_VERSION": "28.+",
+      "PACKAGE_NAME": "stock.controller"
+    },
+    "onesignal-cordova-plugin": {
+      "PACKAGE_NAME": "stock.controller"
+    },
+    "cordova-plugin-file-opener2": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "stock.controller"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "stock.controller"
+    },
+    "cordova-pdf-generator": {
+      "PACKAGE_NAME": "stock.controller"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "stock.controller"
+    }
+  },
+  "dependent_plugins": {
+    "card.io.cordova.mobilesdk": {
+      "PACKAGE_NAME": "stock.controller"
+    }
+  }
+}
